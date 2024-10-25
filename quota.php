@@ -12,7 +12,7 @@
 
     } else {
 
-        // echo ('<br><br><h2 align = "center"> Conexão bem-sucedida</h2>');
+        //echo ('<br><br><h2 align = "center"> Conexão bem-sucedida</h2>');
     }
 
 

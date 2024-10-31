@@ -1,6 +1,6 @@
 <?php
 
-include("forme.php");
+include("quota.php");
 
 header('conten-type:text/html; charsetUTF-8');
 
@@ -12,13 +12,13 @@ $telefone= $_POST['telefone'];
 $login = $_POST['login'];
 $senha = md5(md5($_POST['senha']));
 
-$sqlLogin = "SELECT * FROM usuario WHERE login = '$login'";
+$sqlLogin = "SELECT * FROM person WHERE login = '$login'";
 $resultLogin = $conn->query($sqlLogin);
 $row = mysqli_fetch_array($resultLogin, MYSQLI_ASSOC);
 
 if(is_null($row)){
 
-    $sql = "INSERT INTO person (idperson, nome, sobrenome, cpf, email, telefone, login, senha)
+    $sql = "INSERT INTO  person (idperson, nome, sobrenome, cpf, email, telefone, login, senha)
     VALUES ('', '$nome', '$sobrenome', '$cpf', '$email', '$telefone', '$login', '$senha')";
 
     if(mysqli_query($conn, $sql)) {

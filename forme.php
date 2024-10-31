@@ -6,27 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 </head>
-<body align="center">
+<body>
+    <div align="center">
 
     <form name="cadastro" method="post" action="cad'us.php">
 
     <label>Nome</label>
     <input type="text" name="nome" required>
-    <label>Sobrenome</label>
+    <br><br>
+    <label>Sobrenome </label>
     <input type="text" name="sobrenome" required>
-    <label>CPF</label>
+    <br><br>
+
+    <label>CPF </label>
     <input type="number" name="cpf" required>
-    <label>Email</label>
+    <br><br>
+
+    <label>Email </label>
     <input type="text" name="email">
-    <label>Telefone</label>
+    <br><br>
+    
+    <label>Telefone </label>
     <input type="text" name="telefone">
-    <label>Login</label>
+    <br><br>
+
+    <label>Login </label>
     <input type="text" name="login" required>
-    <label>Senha</label>
+    <br><br>
+
+    <label>Senha </label>
     <input type="text" name="senha" required>
+    <br><br>
 
     <button type="sumbit" name="cadastro">Enviar</button>
 
     </form>
+
+    
+    </div>
 </body>
 </html>

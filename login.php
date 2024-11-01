@@ -7,38 +7,22 @@
     <title></title>
 </head>
 <body align="center">
-
 <div class="back">
 
-    <form name="cadastro" method="post" action="cad'us.php" align="center">
-        
-    <h3>Nome</h3>
-    <input type="text" name="nome" required>
-    <br><br>
-    <h3>Sobrenome </h3>
-    <input type="text" name="sobrenome" required>
-    <br><br>
-    <h3>CPF </h3>
-    <input type="number" name="cpf" required>
-    <br><br>
-    <h3>Email </h3>
-    <input type="text" name="email">
-    <br><br>
-    <h3>Telefone </h3>
-    <input type="text" name="telefone">
-    <br><br>
-    <h3>Login </h3>
-    <input type="text" name="login" required>
-    <br><br>
-    <h3>Senha </h3>
-    <input type="text" name="senha" required>
-    <br><br>
+    <h2>LOGIN</h2><br>
 
-    <button type="submit" name="cadastro">Enviar</button>
+    <form action="authentica.php" method ="post">
+        <h3>Usuário</h3>
+        <input type="text" name="login" required>
+        <h3>Senha</h3>
+        <input type="password" name="senha" required><br>
+        <button type="submit" name="entrar">Login</button>
+        <!-- <input type="submit" name="entrar" value="Login"> -->
+    </form><br>
 
-    </form>
+        <h4>Ainda nãp tem cadastro? <a href="forme.php">Cadastre-se</a></h4>
 
-</div>   
+</div>
 </body>
 <style>
 

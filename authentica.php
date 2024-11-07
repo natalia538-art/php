@@ -1,69 +1,61 @@
 <?php
 include("quota.php");
 
-header('conten-type:text/html; charsetUTF-8');
+header('Content-type:text/html; charset=UTF-8');
 
 $login = $_POST['login'];
 $senha = md5(md5($_POST['senha']));
 
-    $sqlLogin = "SELECT * FROM person WHERE login = '$login'";
-    $resultLogin = $conn->query($sqlLogin);
-    $row = mysqli_fetch_array($resultLogin, MYSQLI_ASSOC);
+// Verificando se o login existe no banco
+$sqlLogin = "SELECT * FROM person WHERE login = '$login'";
+$resultLogin = $conn->query($sqlLogin);
+$row = mysqli_fetch_array($resultLogin, MYSQLI_ASSOC);
 
-    if(is_null($row)){?>
-        
-        <script>
-            
-            alert("Usuário não existe na base de bados\nFavor realizar o cadastro");
-            window.location.href="forme.php";
-
-        <script/>
-              
-        <?php
-}
-
-    $sql = "SELECT * FROM person WHERE login = '$login' AND senha = '$senha'";
-    $result = $conn->query($sql);
-
-    if($result->$num_rows == 1 && $row['admin'] == 0) {?>
-        
-        <script type="text/javascript">
-            
-            alert("Bem-vindo <?php echo $row['nome']?>");
-            window.location.href="https://google.com";
-
-        <script/>
-              
-        <?php
-}
-
-    if($result->$num_rows == 1 && $row['admin'] == 1) {?>
-        
-        <script type="text/javascript">
-        
-            alert("Bem-vindo <?php echo $row['nome']?>");
-            window.location.href="https://google.com";
-
-        <script/>
-          
-        <?php
-} else {?>
-        
+if (!$row) { 
+    // Caso o usuário não exista no banco
+    ?>
     <script type="text/javascript">
-    
-        alert("Login ou senha não conferem : <?php echo $row['login']?>");
-        window.location.href="form.php";
+        alert("Usuário não existe na base de dados\nFavor realizar o cadastro");
+        window.location.href="forme.php";
+    </script>
+    <?php
+    exit; // Saída do script após redirecionamento
+}
 
-    <script/>
-      
+// Verificando se a senha e o login estão corretos
+$sql = "SELECT * FROM person WHERE login = '$login' AND senha = '$senha'";
+$result = $conn->query($sql);
+
+if ($result->num_rows == 1) {
+    // Se o login e senha estiverem corretos
+    $row = $result->fetch_assoc(); // Atualiza a variável $row com o resultado correto
+
+    if ($row['admin'] == 0) {
+        // Caso o usuário não seja admin
+        ?>
+        <script type="text/javascript">
+            alert("Bem-vindo <?php echo $row['nome']; ?>");
+            window.location.href = "https://www.google.com";
+        </script>
+        <?php
+    } else {
+        // Caso o usuário seja admin
+        ?>
+        <script type="text/javascript">
+            alert("Bem-vindo <?php echo $row['nome']; ?>");
+            window.location.href = "admin/admin.php";
+        </script>
+        <?php
+    }
+} else {
+    // Caso o login ou senha estejam errados
+    ?>
+    <script type="text/javascript">
+        alert("Login ou senha não conferem");
+        window.location.href = "form.php";
+    </script>
     <?php
 }
 
-$coon -> close();
-
+$conn->close();
 ?>
-
-
-    
-
-    

@@ -11,6 +11,12 @@ session_start();
 
         <script/>
               
-        <?
-        session_destroy();
+        <?php
     }
+
+    session_destroy();
+
+    ?>
+
+
+    

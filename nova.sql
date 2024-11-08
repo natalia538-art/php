@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Nov-2024 às 15:56
+-- Tempo de geração: 08-Nov-2024 às 13:19
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -44,7 +44,9 @@ CREATE TABLE `person` (
 --
 
 INSERT INTO `person` (`idperson`, `nome`, `sobrenome`, `cpf`, `email`, `telefone`, `login`, `senha`, `admin`) VALUES
-(1, 'Thierry', 'Augusto', '12345678925', '', '', 'thierry', '983e91f7b28c8ac201efe87a88ccc519', 0);
+(1, 'Natasha', NULL, '12345678911', 'natasha@gmail.com', NULL, 'natasha', 'natasha', 0),
+(2, 'Thierry', 'Fagundes', '50505055055', 'thierry8@gmal.com', '', 'thierry', '983e91f7b28c8ac201efe87a88ccc519', 0),
+(3, 'Natasha', NULL, '45611198714', 'natasha@gmail.com', NULL, 'natasha', 'natasha', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -66,7 +68,7 @@ ALTER TABLE `person`
 -- AUTO_INCREMENT de tabela `person`
 --
 ALTER TABLE `person`
-  MODIFY `idperson` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idperson` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

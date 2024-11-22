@@ -36,10 +36,12 @@ include ("../quota.php");
                             "<td>".$row['telefone']. "</td>".
                             "<td>".$row['login']. "</td>";
                     echo "<td>
-                            <button onclick='location.href=\"editar_usuario.php?editar=".$row["login"]."\"'>EDITAR </button>";
+                            <button 
+                            onclick='location.href=\"editar_usuario.php?editar=".$row["login"]."\"'> EDITAR </button>";
 
                     echo "<td>
-                            <button onclick='location.href=\"deleta_usuario.php?deleta".$row["login"]."\"'>DELETA </button>";
+                            <button 
+                            onclick='location.href=\"deleta_usuario.php?deleta=".$row["login"]."\"'> DELETA </button>";
                 }
             }
 
@@ -80,10 +82,12 @@ include ("../quota.php");
                             "<td>".$row['login']. "</td>";
 
                     echo "<td>
-                            <button onclick='location.href=\"editar_usuario.php?editar=".$row["login"]."\"'>EDITAR </button>";
+                            <button 
+                            onclick='location.href=\"editar_usuario.php?editar=".$row["login"]."\"'>EDITAR </button>";
 
                     echo "<td>
-                            <button onclick='location.href=\"deleta_usuario.php?deleta".$row["login"]."\"'>DELETA </button>";
+                            <button 
+                            onclick='location.href=\"deleta_usuario.php?deleta=".$row["login"]."\"'>DELETA </button>";
                 }
             }
 
